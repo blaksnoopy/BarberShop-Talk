@@ -1,10 +1,9 @@
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/movies',
-{useNewUrlParser: true, 
-useCreateIndex: true,
-useUnifiedTopology: true
-}
-);
+mongoose.connect(process.env.DATABASE_URL, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true
+  });
 
 var db = mongoose.connection;
  
