@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/entertainment', function(req, res, next) {
-    res.render('users/entertainment', { 
-        title: 'BarberShop Talk',
+router.get('/', function(req, res, next) {
+    res.render('entertainment/index', { 
+        title: "Let's Talk Entertainment / Music!!!",
         user: req.user
       });
 });

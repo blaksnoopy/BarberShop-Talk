@@ -38,9 +38,9 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/', sportsRouter);
-app.use('/', politicsRouter);
-app.use('/', entertainmentRouter);
+app.use('/sports', sportsRouter);
+app.use('/politics', politicsRouter);
+app.use('/entertainment', entertainmentRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
