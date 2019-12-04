@@ -1,6 +1,13 @@
 <%- include('../partials/header') %>
 
 <a href="/sports/new">Add A Comment Here</a>
+<br>
+<br>
+<%comment.forEach(function(comment) {%>
+    <span><strong><%= comment.userName %></strong></span>
+      <br>
+    <span><%= comment.commentText %></span>
+<% }) %>
 
 
 <%- include('../partials/footer') %>

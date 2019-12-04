@@ -24,8 +24,15 @@ function showForm(req, res) {
 };
 
 function index(req, res) {
+    let modelQuery = req.query.name ? {name: new RegExp(req.query.name, 'i')} : {};
+    Comment.find(modelQuery)
+    .exec(function(err, comment) {
+        if (err) return next(err);
     res.render('sports', { 
         title: "Let's Talk Sports!!!",
-        user: req.user
-      });
+        user: req.user,
+        name: req.user.name,
+        comment
+        })
+    });
 };
