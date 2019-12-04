@@ -1,11 +1,7 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
-</html>
+<%- include('partials/header') %>
+<div>
+<a href="/sports"><button name="spt-button">SPORTS</button></a>
+<a href="/politics"><button name="pol-button">POLITICS</button></a>
+<a href="/entertainment"><button name="ent-button">ENTERTAINMENT / MUSIC</button></a>
+</div>
+<%- include('partials/footer') %>
