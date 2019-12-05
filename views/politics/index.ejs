@@ -1,3 +1,57 @@
 <%- include('../partials/header') %>
-POLITICS!!!
+
+<a href="/politics/new">
+    <div class="ui animated button" tabindex="0">
+        <div class="visible content">
+            <i class="comment icon"></i>
+        </div>
+        <div class="hidden content">Comment</div>
+    </div>
+</a>
+<br>
+<br>
+<%comment.forEach(function(comment) {%>
+
+
+<div class="ui comments">
+    <div class="comment">
+        <a class="avatar">
+            <img src="<%= comment.avatar %>">
+        </a>
+        <div class="content">
+            <a class="author"><%= comment.userName %></a>
+            <div class="text">
+                <%= comment.commentText %>
+
+            </div>
+        </div>
+    </div>
+    <% if(user){ %>
+    <% if(user.id.toString() == comment.userId){%>
+    <form action="/politics/<%= comment._id %>?_method=delete" method="POST" class="delete-form">
+        <div class="ui animated button" tabindex="0">
+            <div class="visible content">
+                <i class="trash alternate outline icon">
+                </i>
+            </div>
+            <input class="hidden content" type="submit" value='Delete' style='border: none; background-color: #BEBFc2;'>
+            </input>
+        </div>
+    </form>
+    <a href="/politics/<%= comment._id %>/edit">
+        <div class="ui animated button" tabindex="0">
+            <div class="visible content">
+                <i class="edit icon"></i>
+            </div>
+            <div class="hidden content">Update</div>
+        </div>
+    </a>
+    <% } else { %>
+    <% } %>
+    <% } else { %>
+    <% } %>
+</div>
+
+<% }) %>
+
 <%- include('../partials/footer') %>

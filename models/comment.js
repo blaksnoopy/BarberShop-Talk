@@ -10,6 +10,10 @@ var commentSchema = new Schema({
     user: {
       type: Schema.Types.ObjectId,
       ref: "User"
+    },
+    category: {
+      type: String,
+      enum: ['Sports', 'Politics', 'Entertainment']
     }
   }, {
     timestamps: true
