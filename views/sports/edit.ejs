@@ -1,0 +1,9 @@
+<%- include('../partials/header') %>
+
+<form action="/sports/<%= comment._id %>?_method=PUT" method="POST">
+    <textarea name="comment" cols="30" rows="10" ><%= comment.commentText %></textarea>
+    <input type="submit">
+</form>
+
+<%- include('../partials/footer') %>
+

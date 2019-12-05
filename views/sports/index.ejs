@@ -1,12 +1,53 @@
 <%- include('../partials/header') %>
 
-<a href="/sports/new">Add A Comment Here</a>
+<a href="/sports/new">
+    <div class="ui animated button" tabindex="0">
+        <div class="visible content">
+            <i class="comment icon"></i>
+    </div>
+        <div class="hidden content">Comment</div>
+    </div>
+</a>
 <br>
 <br>
 <%comment.forEach(function(comment) {%>
-    <span><strong><%= comment.userName %></strong></span>
-      <br>
-    <span><%= comment.commentText %></span>
+
+
+<div class="ui comments">
+    <div class="comment">
+        <a class="avatar">
+            <img src="<%= comment.avatar %>">
+        </a>
+        <div class="content">
+            <a class="author"><%= comment.userName %></a>
+            <div class="text">
+                <%= comment.commentText %>
+            </div>
+        </div>
+    </div>
+    <% if(user.id.toString() == comment.userId){%>
+        <form action="/sports/<%= comment._id %>?_method=delete" method="POST" class="delete-form">
+            <div class="ui animated button" tabindex="0">
+                <div class="visible content">
+                    <i class="trash alternate outline icon">      
+                    </i>
+                </div>
+                    <input class="hidden content" type="submit" value='Delete' style='border: none; background-color: #BEBFc2;'>
+                    </input>
+            </div>
+        </form>
+        <a href="/sports/<%= comment._id %>/edit">
+            <div class="ui animated button" tabindex="0">
+                <div class="visible content">
+                    <i class="edit icon"></i>
+            </div>
+                <div class="hidden content">Update</div>
+            </div>
+        </a>
+    <% } else { %>
+    <% } %>
+</div>
+
 <% }) %>
 
 

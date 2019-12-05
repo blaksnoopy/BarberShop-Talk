@@ -5,7 +5,12 @@ var Schema = mongoose.Schema;
 var commentSchema = new Schema({
     userName: String,
     commentText: String,
-    userId: String
+    userId: String,
+    avatar: String,
+    user: {
+      type: Schema.Types.ObjectId,
+      ref: "User"
+    }
   }, {
     timestamps: true
   });
