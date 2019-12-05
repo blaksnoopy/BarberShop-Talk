@@ -5,9 +5,20 @@ body {
   align-items: center;
   justify-content: space-evenly;
   margin: 20px;
-  /* background-image: url(https://i.imgur.com/ztpWq2H.jpg); */
-  /* background-repeat: no-repeat; */
-  /* background-size: cover; */
+}
+
+body::after {
+  content: "";
+  background: url(https://i.imgur.com/ztpWq2H.jpg);
+  opacity: 0.35;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+  background-size: cover;  
+  background-repeat: no-repeat; 
 }
 
 nav > a {
@@ -55,12 +66,7 @@ textarea {
 }
 
 h1 {
-  font-size: 32px;
+  font-size: 50px;
   text-align: center;
-  background-color: white;
-  background: local;
-}
-
-div > button {
-  justify-content: center;
+  color: white;
 }

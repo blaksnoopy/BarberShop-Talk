@@ -12,6 +12,7 @@
   <body>
     <nav>
       <a href="/" ><i class="material-icons">home</i><%- title === 'Home' ? 'class="active"' : '' %></a>
+      <h1><%= title %></h1>
       <ul class="right">
         <li>
         <% if (user) { %>
@@ -22,4 +23,4 @@
         </li>
     </ul>
     </nav>
-    <h1><%= title %></h1>
+    <br>

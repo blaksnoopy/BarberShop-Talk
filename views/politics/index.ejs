@@ -1,7 +1,6 @@
 <%- include('../partials/header') %>
-
 <a href="/politics/new">
-    <div class="ui animated button" tabindex="0">
+    <div class="ui animated button" tabindex="0" style="background-color: white; color: blue;">
         <div class="visible content">
             <i class="comment icon"></i>
         </div>
@@ -11,47 +10,44 @@
 <br>
 <br>
 <%comment.forEach(function(comment) {%>
-
-
 <div class="ui comments">
     <div class="comment">
         <a class="avatar">
-            <img src="<%= comment.avatar %>">
+            <img src="<%= comment.avatar %>" style="width: 50px; height: 65px;">
         </a>
         <div class="content">
-            <a class="author"><%= comment.userName %></a>
-            <div class="text">
+            <a class="author" style="text-decoration: none; color: white; cursor: default; font-size: x-large; background-color: black;"><%= comment.userName %></a>
+            <div class="text" style="font-size: larger; color: black; background-color: white; padding: 10px;">
                 <%= comment.commentText %>
-
             </div>
         </div>
     </div>
     <% if(user){ %>
     <% if(user.id.toString() == comment.userId){%>
+    <div class="button row" style="display: flex; align-items: center;">
     <form action="/politics/<%= comment._id %>?_method=delete" method="POST" class="delete-form">
-        <div class="ui animated button" tabindex="0">
+        <div class="ui animated button" tabindex="0" style="background-color: white;">
             <div class="visible content">
-                <i class="trash alternate outline icon">
+                <i class="trash alternate outline icon" style="background-color: white; color: red;">
                 </i>
             </div>
-            <input class="hidden content" type="submit" value='Delete' style='border: none; background-color: #BEBFc2;'>
+            <input class="hidden content" type="submit" value='Delete' style='border: none; color: red;'>
             </input>
         </div>
     </form>
     <a href="/politics/<%= comment._id %>/edit">
-        <div class="ui animated button" tabindex="0">
+        <div class="ui animated button" tabindex="0" style="background-color: white; color: black;">
             <div class="visible content">
                 <i class="edit icon"></i>
             </div>
             <div class="hidden content">Update</div>
         </div>
     </a>
+    </div>
     <% } else { %>
     <% } %>
     <% } else { %>
     <% } %>
 </div>
-
 <% }) %>
-
 <%- include('../partials/footer') %>
