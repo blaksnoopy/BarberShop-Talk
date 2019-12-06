@@ -5,6 +5,7 @@ body {
   align-items: center;
   justify-content: space-evenly;
   margin: 20px;
+  background-size: cover;
 }
 
 body::after {
